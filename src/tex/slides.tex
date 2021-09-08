@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Slides : Bayes basics ("bayesics") %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% PREAMBLE
+%% Define document class and basic options
+\documentclass{beamer}
+%\setlength{\parindent}{0pt}
+
+%% Load packages
+\usepackage{palatino}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+%\usepackage{url}
+\usepackage{hyperref}
+%\usepackage{listings}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc} %% For french
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=red,
+	filecolor=blue,
+	urlcolor=blue
+}
+
+\usetheme{Madrid}
+
+%% Basic info
+\title{Introduction à la pensé et aux méthodes bayésiennes}
+%\subtitle{}
+\author{Roy Nitulescu\inst{1}}
+
+\institute
+{
+    \inst{1}%
+    CITADEL\\
+    CR-CHUM
+}
+
+\date[UdeM, Sept. 22, 2021]{Université de Montréal, Sept. 22, 2021}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table des matières}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Table des matières}
+        \tableofcontents[currentsubsection]
+    \end{frame}
+}
+
+
+%% BEGIN DOCUMENT
+\begin{document}
+
+%%%%
+%% Slides
+%%%%
+
+\frame{\titlepage}
+
+
+\begin{frame}
+    \frametitle{Préambule}
+%    \begin{itemize}
+%      \item This 3-hour lecture will be broken down into 3 modules
+%      \item Each module will last 50 minutes
+%      \begin{itemize}
+%        \item 30 minutes of lecture time
+%        \item 10 minutes for exercises
+%        \item 10 minutes for discussing the exercises
+%      \end{itemize}
+%      \item There will be two 15-minute breaks between the modules
+%      \item I expect that all students have already installed R on their computer and tested that it works
+%    \end{itemize}
+    
+%    \vfill
+    
+    Le code source pour cette présentation ce trouve içi:\\
+    \url{https://github.com/rnitulescu/bayesics}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Table des matières}
+    \tableofcontents
+\end{frame}
+
+
+%%%%
+%% MODULE 1
+%%%%
+
+\section{Motivation}
+
+\subsection{La dualité du concept de probabilité}
+
+\begin{frame}
+    \frametitle{La dualité du concept de probabilité}
+    ...
+\end{frame}
+
+
+\section{Intuition}
+
+%% mostly examples just using discrete event probabilities
+
+\section{Théorie}
+
+%% formally present bayes theoerem even tough we sort of saw it informally in above section
+%% the big step here is De Finetti's theorem, since it allows us to do some cool modeling, etc.
+%% Present the model of the mean with know or unknown variance, etc. (do we need to go that far??)
+
+
+\section{Applications}
+
+%% the bulk of content
+%% have the sex ratio example from Aki Vehtari, etc.
+
+
+%% END DOCUMENT
+\end{document}
+
