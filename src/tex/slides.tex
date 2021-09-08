@@ -111,7 +111,7 @@
     \frametitle{La dualité du concept de probabilité}
 
     De par son origine, le concept à une \textbf{dualité}\footnote{
-    Hacking, Ian (2006). \emph{The emergence of probability:
+    Hacking, Ian (1975). \emph{The emergence of probability:
     A philosophical study of early ideas about probability,
     induction and statistical inference}. Cambridge University Press.
     }
@@ -121,20 +121,67 @@
     \begin{enumerate}
       \item \textbf{Aléatoire}
         \begin{itemize}
-          \item Fréquence: la limite d'une fréquence relative dans une séquence infinie
-          \item Propensité: une propriété intrinsèque d'objets ou de situations
+          \item Fréquence (la limite d'une fréquence relative dans une séquence infinie)
+          \item Propensité (une propriété intrinsèque d'objets ou de situations)
         \end{itemize}
       \item \textbf{Épistémique}
         \begin{itemize}
-          \item Logique: le degré de soutien ou de confirmation qu'un élément d'évidence confère à une hypothèse donnée
-          \item Personnaliste: le degré de croyance subjectif (pour les probabilités \emph{a priori})
+          \item Logique (le degré de soutien ou de confirmation qu'un élément d'évidence confère à une hypothèse donnée)
+          \item Subjectif (le degré de croyance subjectif)
         \end{itemize}
-    \end{enumerate}
-
-%    \vfill
-%    Pour plus de détails, voir:\\
-%    \url{https://plato.stanford.edu/entries/probability-interpret/}
+    \end{enumerate}    
 \end{frame}
+
+\begin{frame}
+    \frametitle{Plusieurs interprétations}
+    Donc, plusieurs \textbf{interprétations} de la probabilité ont été proposées. Mais, comment les évaluons-nous?
+    
+    \vfill
+
+    Des \textbf{critères} d’évaluation proposés: ``admissibility'', ``ascertainability'', ``applicability''\footnote{
+    Salmon, W. C. (1967). \emph{The foundations of scientific inference}.
+    University of Pittsburgh Press.
+    }
+
+    \vfill
+
+    Mais \textbf{aucune} des interprétations ne répond à tous ces critères.
+
+    \vfill
+
+    Pour plus de détails, voir aussi:
+    \href{https://plato.stanford.edu/entries/probability-interpret/}{https://plato.stanford.edu}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Plusieurs systèmes de probabilité}
+    Plusieurs \textbf{systèmes} axiomatiques de probabilité ont été développés.
+
+    \begin{itemize}
+      \item Kolmogorov (fréquence)
+      \item Carnap (logique)
+      \item De Finetti (subjectif/personnaliste)
+    \end{itemize}
+
+    \vfill
+
+    En pratique, ces systèmes sont souvent plus semblables que différents.
+
+    \vfill
+
+    Il y a même le \textbf{Théorème de Bernstein-von Mises} qui relient le système fréquentiste
+    d’inférence au système bayésien (en bref, sous certaines hypothèses, asymptotiquement,
+    les intervalles de confiances sont équivalents aux intervalles crédibles bayésiennes).
+    \footnote{
+      \url{https://en.wikipedia.org/wiki/Bernstein-von_Mises_theorem}
+    }
+\end{frame}
+
+
+
+
+
+
 
 
 \section{Intuition}
@@ -154,6 +201,34 @@
 
 %% the bulk of content
 %% have the sex ratio example from Aki Vehtari, etc.
+
+
+\section{Conclusion}
+
+\begin{frame}
+    \frametitle{Références et lectures suggérées}
+
+    Philosophie:
+    \begin{itemize}
+      \item Hacking, I. (1975). \emph{The emergence of probability:
+            A philosophical study of early ideas about probability,
+            induction and statistical inference}. Cambridge University Press.
+      \item Salmon, W. C. (1967). \emph{The foundations of scientific inference}.
+            University of Pittsburgh Press.
+    \end{itemize}
+
+    Méthodes bayésiennes:
+    \begin{itemize}
+      \item Kruschke, J. K. (2013). Bayesian estimation supersedes the t test.
+            \emph{Journal of Experimental Psychology: General}, \emph{142}(2), 573.
+      \item Kruschke, J. K., \& Vanpaemel, W. (2015). Bayesian estimation in hierarchical models.
+            \emph{The Oxford handbook of computational and mathematical psychology, 279}.
+      \item Kruschke, J. K.(2015). \emph{Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan}.
+            Academic Press.
+      \item Gelman, A., Carlin, J. B., Stern, H. S., \& Rubin, D. B. (1995).
+            \emph{Bayesian data analysis}. Chapman and Hall/CRC.
+    \end{itemize}
+\end{frame}
 
 
 %% END DOCUMENT
