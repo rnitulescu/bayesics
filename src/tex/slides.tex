@@ -102,7 +102,7 @@
 
 
 %%%%
-%% MODULE 1
+%% Motivation
 %%%%
 
 \section{Motivation}
@@ -132,6 +132,7 @@
     \end{enumerate}    
 \end{frame}
 
+
 \begin{frame}
     \frametitle{Plusieurs interprétations}
     Donc, plusieurs \textbf{interprétations} de la probabilité ont été proposées. Mais, comment les évaluons-nous?
@@ -152,6 +153,7 @@
     Pour plus de détails, voir aussi:
     \href{https://plato.stanford.edu/entries/probability-interpret/}{https://plato.stanford.edu}
 \end{frame}
+
 
 \begin{frame}
     \frametitle{Plusieurs systèmes de probabilité}
@@ -178,11 +180,27 @@
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{Soyons pragmatiques}
+    Gardant en tête tous ces problèmes philosophiques et l’impossibilité de faire un choix absolument objectif,
+    pourquoi ne pas avoir une approche plutôt axé sur ce qui est \textbf{pratique}?
+
+    \vfill
+
+    En pratique, les méthodes bayésiennes nous fournissent souvent plus \textbf{d’outils} et plus de
+    \textbf{flexibilité} que ceux Fréquentistes, et tous cela dans le cadre d’une méthodologie \textbf{cohérente}
+    basé sur des principes fondamentaux de la théorie de la probabilité.
+    
+    \vfill
+
+    Elles nous permettent même \textbf{d’intégrer} des nouvelles données avec \textbf{nos connaissances déjà acquises} 
+    dans le but d’avancer nos connaissances.
+\end{frame}
 
 
-
-
-
+%%%%
+%% Intuition
+%%%%
 
 \section{Intuition}
 
@@ -190,11 +208,106 @@
 
 %% mostly examples just using discrete event probabilities
 
+
+%%%%
+%% Théorie
+%%%%
+
 \section{Théorie}
 
 %% formally present bayes theoerem even tough we sort of saw it informally in above section
 %% the big step here is De Finetti's theorem, since it allows us to do some cool modeling, etc.
 %% Present the model of the mean with know or unknown variance, etc. (do we need to go that far??)
+
+\begin{frame}
+    \frametitle{Le théorème de Bayes (probabilités discrètes)}
+    Le théorème suit directement de la definition de probabilité conditionnelle:
+
+    \[p(A \cap B) =  p(A | B) \, p(B) \,\,\, \textrm{ et } \,\,\, p(B \cap A) =  p(B | A) \, p(A)\]
+    \[\textrm{Et puisque } \,\,\, p(A \cap B) = p(B \cap A)\]
+    \[\textrm{Il suit que } \,\,\, p(A | B) \, p(B) = p(B | A) \, p(A)\]
+    \[\textrm{Donc } \,\,\, p(A | B) = \frac{p(B | A) \, p(A)}{p(B)}\]
+    
+    Voilà!
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Le théorème de Bayes (probabilités continues)}
+    Le théorème suit directement de la definition de la densité conditionnelle:
+
+    \[p_{X|Y}(x|y) = \frac{p_{X,Y}(x,y)}{p_Y(y)} \,\,\, \textrm{ et }\]
+    \[p_{Y|X}(y|x) = \frac{p_{X,Y}(x,y)}{p_X(x)}\]
+    \[\textrm{Donc, il suit que } \,\,\, p_{X|Y}(x|y) \, p_Y(y) = p_{Y|X}(y|x) \, p_X(x)\]
+    \[\textrm{Ce qui implique que } \,\,\, p_{X|Y}(x|y) = \frac{p_{Y|X}(y|x) \, p_X(x)}{p_Y(y)}\]
+
+    Voilà!
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Comment appliquons-nous cela?}
+    Comment faisons-nous pour appliquer ce théorème à des problèmes 
+    d'inférence probabilistes?
+
+    \vfill
+
+    %% Show a naive attempt and how it brings up the question:
+    %% where do these probs, parameters, priors even come from?!?
+    %% Enter De Finetti's theorem which justifies it all with the
+    %% assumption of exchangeability (or conditional of some factors, etc.)
+\end{frame}
+
+
+
+%% NEED TO TRANSLATE NEXT 2-3 SLIDES TO FRENCH
+%% Spell check with: hunspell -l -t -d fr_CA slides.tex (take out -l for interactive, check man 1st)
+
+\begin{frame}
+    \frametitle{Exchangeability\footnote{
+        Bernardo, J. M. (1996).
+        The concept of exchangeability and its applications.
+        \emph{Far East Journal of Mathematical Sciences}, \emph{4}, 111-122.
+    }}
+    \textbf{Definition}
+
+    \vfill
+
+    A (finite or infinite) sequence of random variables, $\boldsymbol{\{x_1, x_2, \ldots\}}$,
+    is said to be \emph{exchangeable} if for any finite subset of the sequence
+    and for all permutations, $\boldsymbol{\pi}$, defined over the set $\boldsymbol{\{1, \ldots, n\}}$
+    \[p(x_1, \ldots, x_n) = p(x_{\pi(1)}, \ldots, x_{\pi(n)}).\]
+
+    \vfill
+
+    In essence, this is a vague assumption\footnote{
+    It can be assumed conditional on other variables as well.} of symmetry.
+    Also, exchangeability is a weaker assumption than \emph{independent and identically distributed} (i.i.d.).
+    Though i.i.d. implies exchangeability, the opposite is not true!
+\end{frame}
+
+\begin{frame}
+    \frametitle{De Finetti;s Theorem}
+
+    \vfill
+    
+    \textbf{De Finetti's representation theorem (from Bernardo, 1996)}\footnote{
+    Also, note that by the theorem, exchangeability and \emph{conditional} i.i.d are equivalent.}
+
+    \vfill
+
+    If $\boldsymbol{\{x_1, x_2, \ldots\}}$ is an exchangeable sequence of real-valued random quantities,
+    then \emph{there exists} a parametric \emph{model}, $\boldsymbol{p(x | \theta)}$, labelled by some
+    parameter $\boldsymbol{\theta \in \Theta}$ which is the limit (as $\boldsymbol{n \to \infty}$)
+    of some function of the $\boldsymbol{x_i}$'s, and \emph{there exists} a probability distribution
+    for $\boldsymbol{\theta}$, with density $\boldsymbol{p(\theta)}$, such that
+
+    \[p(x_1, \ldots, x_n) = \int_{\Theta} \prod_{i = 1}^{n} p(x_i | \theta) \, p(\theta) \, d\theta.\]
+\end{frame}
+
+
+
+
 
 
 \section{Applications}
