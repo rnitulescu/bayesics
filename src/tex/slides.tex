@@ -16,6 +16,7 @@
 %\usepackage{listings}
 \usepackage{verbatim}
 \usepackage[utf8]{inputenc} %% For french
+\usepackage{tikz} %% For drawing (eg, Venn diagrams)
 
 \hypersetup{
 	colorlinks=true,
@@ -204,9 +205,35 @@
 
 \section{Intuition}
 
-%\subsection{}
+\subsection{Théorie de la probabilité (révision)}
 
-%% mostly examples just using discrete event probabilities
+\begin{frame}
+    \frametitle{Probabilité d'intersection et probabilité conditionelle}
+
+    \[p(A | B) = \frac{p(A \cap B)}{p(B)}\]
+
+    \begin{figure}
+    \centering
+    \input{content/anb.tex}
+    \caption{Diagramme de Venn représentant $p(A \cap B)$}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Loi de probabilité totale}
+
+    \[p(E | H) \, p(H) + p(E | H^c) \, p(H^c)\]
+    \[ = p(E \cap H) + p(E \cap H^c) = p(E)\]
+
+    \begin{figure}
+    \centering
+    \input{content/totprob.tex}
+    \caption{Diagramme de Venn représentant loi de probabilité totale}
+    \end{figure}
+\end{frame}
+
+
 
 
 %%%%
