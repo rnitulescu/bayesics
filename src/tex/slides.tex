@@ -199,23 +199,40 @@
 \end{frame}
 
 
-%%%%
-%% Intuition
-%%%%
+\section{Théorie de la probabilité (révision)}
 
-\section{Intuition}
+\begin{frame}
+    \frametitle{Propriétés de la probabilité}
+    \[p(A^c) = 1 - p(A), \,\,\, \textrm{puisque} \,\,\, A \cup A^c = S\]
+    \begin{figure}
+      \centering
+      \scalebox{1}{\input{content/aneg.tex}}
+      \caption{Diagramme de Venn représentant la négation (complément)}
+    \end{figure}
+\end{frame}
 
-\subsection{Théorie de la probabilité (révision)}
+
+\begin{frame}
+    \frametitle{Propriétés de la probabilité}
+    \[p(A \cup B) = p(A) + p(B) - p(A \cap B)\]\footnote{
+        Si $A$ et $B$ sont mutuellement exclusifs, $p(A \cap B) = 0$
+    }
+    \begin{figure}
+      \centering
+      \scalebox{1}{\input{content/aub.tex}}
+      \caption{Diagramme de Venn représentant $p(A \cup B)$}
+    \end{figure}    
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Probabilité d'intersection et probabilité conditionelle}
-
-    \[p(A | B) = \frac{p(A \cap B)}{p(B)}\]
+    \[p(A \cap B) = p(A | B) \, p(B) \,\,\, \textrm{Donc,} \,\,\, p(A | B) = \frac{p(A \cap B)}{p(B)}\]
 
     \begin{figure}
-    \centering
-    \input{content/anb.tex}
-    \caption{Diagramme de Venn représentant $p(A \cap B)$}
+      \centering
+      \input{content/anb.tex}
+      \caption{Diagramme de Venn représentant $p(A \cap B)$}
     \end{figure}
 \end{frame}
 
@@ -223,22 +240,49 @@
 \begin{frame}
     \frametitle{Loi de probabilité totale}
 
-    \[p(E | H) \, p(H) + p(E | H^c) \, p(H^c)\]
-    \[ = p(E \cap H) + p(E \cap H^c) = p(E)\]
+    \[p(E) = p(E \cap H) + p(E \cap H^c)\]
+    \[ = p(E | H) \, p(H) + p(E | H^c) \, p(H^c)\]
 
     \begin{figure}
-    \centering
-    \input{content/totprob.tex}
-    \caption{Diagramme de Venn représentant loi de probabilité totale}
+      \centering
+      \input{content/totprob.tex}
+      \caption{Diagramme de Venn représentant loi de probabilité totale}
     \end{figure}
 \end{frame}
 
 
-%test...
+%%%%
+%% Intuition
+%%%%
+
+\section{Intuition}
+
 \begin{frame}
-    \frametitle{...}
+    \frametitle{Example: diagnostic de maladie\footnote{
+        Emprunté et modifié d'un example pris dans: Devlin, Keith (2010).
+        \emph{The unfinished game: Pascal, Fermat, and the seventeenth-century letter that made the world modern.}
+        Basic Books, pp 139-142.
+    }}
+    Supposons que vous avez reçu un résultat positif pour un test diagnostic d'une maladie rare.
+    Quelle est la probabilité que vous avez cette maladie, conditionellement sur le résultat du test?
+
+    \vfill
+
+    Voici les faits:
+    \begin{itemize}
+      \item Prévalence: Parmi \textbf{10,000} individus, \textbf{100} ont la maladie (donc, \textbf{9,900} ne l'ont pas)
+      \item Sensibilité du test: Parmi les \textbf{100} malades,
+            \textbf{95} reçoivent un diagnostic positif (donc, \textbf{5} faux négatifs)
+      \item Spécificité du test: Parmi les \textbf{9,900} en santé,
+            \textbf{7,821} reçoivent un diagnostic négatif (donc, \textbf{2,079} faux positifs)
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Example: diagnostic de maladie}
     \begin{figure}
-    \centering
+      \centering
       \scalebox{0.75}{\input{content/flow1.tex}}
     \end{figure}
 
@@ -247,14 +291,16 @@
 \end{frame}
 
 
-%test...
 \begin{frame}
-    \frametitle{...}
+    \frametitle{Example: diagnostic de maladie (en probabilités)}
     \begin{figure}
-    \centering
-      \scalebox{0.75}{\input{content/flow2.tex}}
-    %\caption{blah...}
+      \centering
+      \scalebox{0.65}{\input{content/flow2.tex}}
     \end{figure}
+
+    Si ont suit l'arbre de façon analogique:
+    \[p(H | E) = \frac{(0.01) (0.95)}{(0.01) (0.95) + (0.99) (0.21)}\]
+    \[ = \frac{p(E | H) \, p(H)}{p(E | H) \, p(H) + p(E | H^c) \, p(H^c)} = \frac{p(E | H) \, p(H)}{p(E)}\]
 \end{frame}
 
 
