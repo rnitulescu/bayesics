@@ -117,6 +117,8 @@
     induction and statistical inference}. Cambridge University Press.
     }
 
+    \pause
+
     \vfill
 
     \begin{enumerate}
@@ -125,6 +127,9 @@
           \item Fréquence (la limite d'une fréquence relative dans une séquence infinie)
           \item Propensité (une propriété intrinsèque d'objets ou de situations)
         \end{itemize}
+
+      \pause
+
       \item \textbf{Épistémique}
         \begin{itemize}
           \item Logique (le degré de soutien ou de confirmation qu'un élément d'évidence confère à une hypothèse donnée)
@@ -138,6 +143,8 @@
     \frametitle{Plusieurs interprétations}
     Donc, plusieurs \textbf{interprétations} de la probabilité ont été proposées. Mais, comment les évaluons-nous?
     
+    \pause
+
     \vfill
 
     Des \textbf{critères} d’évaluation proposés: ``admissibility'', ``ascertainability'', ``applicability''\footnote{
@@ -145,9 +152,13 @@
     University of Pittsburgh Press.
     }
 
+    \pause
+
     \vfill
 
     Mais \textbf{aucune} des interprétations ne répond à tous ces critères.
+
+    \pause
 
     \vfill
 
@@ -166,9 +177,13 @@
       \item De Finetti (subjectif/personnaliste)
     \end{itemize}
 
+    \pause
+
     \vfill
 
     En pratique, ces systèmes sont souvent plus semblables que différents.
+
+    \pause
 
     \vfill
 
@@ -186,11 +201,15 @@
     Gardant en tête tous ces problèmes philosophiques et l’impossibilité de faire un choix absolument objectif,
     pourquoi ne pas avoir une approche plutôt axé sur ce qui est \textbf{pratique}?
 
+    \pause
+
     \vfill
 
     En pratique, les méthodes bayésiennes nous fournissent souvent plus \textbf{d’outils} et plus de
     \textbf{flexibilité} que ceux Fréquentistes, et tous cela dans le cadre d’une méthodologie \textbf{cohérente}
     basé sur des principes fondamentaux de la théorie de la probabilité.
+
+    \pause
     
     \vfill
 
@@ -266,13 +285,17 @@
     Supposons que vous avez reçu un résultat positif pour un test diagnostic d'une maladie rare.
     Quelle est la probabilité que vous avez cette maladie, conditionellement sur le résultat du test?
 
+    \pause
+
     \vfill
 
     Voici les faits:
     \begin{itemize}
       \item Prévalence: Parmi \textbf{10,000} individus, \textbf{100} ont la maladie (donc, \textbf{9,900} ne l'ont pas)
+      \pause
       \item Sensibilité du test: Parmi les \textbf{100} malades,
             \textbf{95} reçoivent un diagnostic positif (donc, \textbf{5} faux négatifs)
+      \pause
       \item Spécificité du test: Parmi les \textbf{9,900} en santé,
             \textbf{7,821} reçoivent un diagnostic négatif (donc, \textbf{2,079} faux positifs)
     \end{itemize}
@@ -286,6 +309,8 @@
       \scalebox{0.75}{\input{content/flow1.tex}}
     \end{figure}
 
+    \pause
+
     La proportion des patients avec un test positif qui sont véritablement malades est de
     \[\frac{95}{95 + 2079} = 0.044 .\]
 \end{frame}
@@ -298,14 +323,14 @@
       \scalebox{0.65}{\input{content/flow2.tex}}
     \end{figure}
 
+    \pause
+
     Si ont suit l'arbre de façon analogique:
-    \[p(H | E) = \frac{(0.01) (0.95)}{(0.01) (0.95) + (0.99) (0.21)}\]
+    \[p(H | E) = \frac{(0.95)(0.01)}{(0.95)(0.01) + (0.21)(0.99)}\]
     \[ = \frac{p(E | H) \, p(H)}{p(E | H) \, p(H) + p(E | H^c) \, p(H^c)} = \frac{p(E | H) \, p(H)}{p(E)}\]
 \end{frame}
 
-
-
-
+%% Add Krushchke like example??
 
 
 %%%%
@@ -322,9 +347,14 @@
     \frametitle{Le théorème de Bayes (probabilités discrètes)}
     Le théorème suit directement de la definition de probabilité conditionnelle:
 
-    \[p(A \cap B) =  p(A | B) \, p(B) \,\,\, \textrm{ et } \,\,\, p(B \cap A) =  p(B | A) \, p(A)\]
+    \pause
+
+    \[p(A \cap B) =  p(A | B) \, p(B) \,\,\, \pause \textrm{ et } \,\,\, p(B \cap A) =  p(B | A) \, p(A)\]
+    \pause
     \[\textrm{Et puisque } \,\,\, p(A \cap B) = p(B \cap A)\]
+    \pause
     \[\textrm{Il suit que } \,\,\, p(A | B) \, p(B) = p(B | A) \, p(A)\]
+    \pause
     \[\textrm{Donc } \,\,\, p(A | B) = \frac{p(B | A) \, p(A)}{p(B)}\]
     
     Voilà!
@@ -335,9 +365,13 @@
     \frametitle{Le théorème de Bayes (probabilités continues)}
     Le théorème suit directement de la definition de la densité conditionnelle:
 
-    \[p_{X|Y}(x|y) = \frac{p_{X,Y}(x,y)}{p_Y(y)} \,\,\, \textrm{ et }\]
+    \pause
+
+    \[p_{X|Y}(x|y) = \frac{p_{X,Y}(x,y)}{p_Y(y)} \,\,\, \pause \textrm{ et }\]
     \[p_{Y|X}(y|x) = \frac{p_{X,Y}(x,y)}{p_X(x)}\]
+    \pause
     \[\textrm{Donc, il suit que } \,\,\, p_{X|Y}(x|y) \, p_Y(y) = p_{Y|X}(y|x) \, p_X(x)\]
+    \pause
     \[\textrm{Ce qui implique que } \,\,\, p_{X|Y}(x|y) = \frac{p_{Y|X}(y|x) \, p_X(x)}{p_Y(y)}\]
 
     Voilà!
