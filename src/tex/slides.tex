@@ -338,7 +338,7 @@
 %% Théorie
 %%%%
 
-\section{Théorie}
+\section{Théorie bayésienne}
 
 %% formally present bayes theoerem even tough we sort of saw it informally in above section
 %% the big step here is De Finetti's theorem, since it allows us to do some cool modeling, etc.
@@ -434,66 +434,108 @@
 
     \pause
 
-    \textbf{Réponse:} Le théorème de De Finetti.
+    \textbf{Réponse:} Le théorème de De Finetti. \pause Mais avant, une définition...
 \end{frame}
-
-
 
 %% NEED TO TRANSLATE NEXT 2-3 SLIDES TO FRENCH
 %% Spell check with: hunspell -l -t -d fr_CA slides.tex (take out -l for interactive, check man 1st)
 
 \begin{frame}
-    \frametitle{Exchangeability\footnote{
+    \frametitle{L'échangeabilité\footnote{
         Bernardo, J. M. (1996).
         The concept of exchangeability and its applications.
         \emph{Far East Journal of Mathematical Sciences}, \emph{4}, 111-122.
     }}
     \textbf{Définition}
 
+    \pause
+
     \vfill
 
-    A (finite or infinite) sequence of random variables, $\boldsymbol{\{x_1, x_2, \ldots\}}$,
-    is said to be \emph{exchangeable} if for any finite subset of the sequence
-    and for all permutations, $\boldsymbol{\pi}$, defined over the set $\boldsymbol{\{1, \ldots, n\}}$
+    Une séquence (finie ou infinie) de variables aléatoires, $\boldsymbol{\{x_1, x_2, \ldots\}}$,
+    est dite \emph{échangeable} si pour tout sous-ensemble finie de la séquence
+    et pour toutes permutations, $\boldsymbol{\pi}$, définie sur l'ensemble $\boldsymbol{\{1, \ldots, n\}}$
     \[p(x_1, \ldots, x_n) = p(x_{\pi(1)}, \ldots, x_{\pi(n)}).\]
 
+%    A (finite or infinite) sequence of random variables, $\boldsymbol{\{x_1, x_2, \ldots\}}$,
+%    is said to be \emph{exchangeable} if for any finite subset of the sequence
+%    and for all permutations, $\boldsymbol{\pi}$, defined over the set $\boldsymbol{\{1, \ldots, n\}}$
+%    \[p(x_1, \ldots, x_n) = p(x_{\pi(1)}, \ldots, x_{\pi(n)}).\]
+
+    \pause
+
     \vfill
 
-    In essence, this is a vague assumption\footnote{
-    It can be assumed conditional on other variables as well.} of symmetry.
-    Also, exchangeability is a weaker assumption than \emph{independent and identically distributed} (i.i.d.).
-    Though i.i.d. implies exchangeability, the opposite is not true!
+    Essentiellement, ceci est une vague hypothèse\footnote{
+    Peut être supposé conditionnellement sur d'autres variables également.} de symétrie \pause
+    De plus, cette hypothèse est plus faible que \emph{indépendant et identiquement distribué} (i.i.d.). \pause
+    Tandis que i.i.d. implique l'échangeabilité, l'inverse n'est pas vraie!
 \end{frame}
 
+
 \begin{frame}
-    \frametitle{De Finetti's Theorem}
+    \frametitle{Le théorème de De Finetti (cité en Anglais)}
 
     \vfill
     
     \textbf{De Finetti's representation theorem (from Bernardo, 1996)}\footnote{
-    Also, note that by the theorem, exchangeability and \emph{conditional} i.i.d are equivalent.}
+    Notez que de par ce théorème, l'échangeabilité et i.i.d \emph{conditionnelle} sont équivalents.}
+
+    \pause
 
     \vfill
 
-    If $\boldsymbol{\{x_1, x_2, \ldots\}}$ is an exchangeable sequence of real-valued random quantities,
+%% The french is too gross for this theorem...
+%    Si $\boldsymbol{\{x_1, x_2, \ldots\}}$ est une séquence échangeable de quantités aléatroires (à valeurs réels),
+%    \emph{il existe} une \emph{modèle} paramétrique, $\boldsymbol{p(x | \theta)}$, labelled by some
+%    parameter $\boldsymbol{\theta \in \Theta}$ which is the limit (as $\boldsymbol{n \to \infty}$)
+%    of some function of the $\boldsymbol{x_i}$'s, and \emph{there exists} a probability distribution
+%    for $\boldsymbol{\theta}$, with density $\boldsymbol{p(\theta)}$, such that
+
+    If $\boldsymbol{\{x_1, x_2, \ldots\}}$ is an exchangeable sequence of real-valued random quantities, \pause
     then \emph{there exists} a parametric \emph{model}, $\boldsymbol{p(x | \theta)}$, labelled by some
     parameter $\boldsymbol{\theta \in \Theta}$ which is the limit (as $\boldsymbol{n \to \infty}$)
-    of some function of the $\boldsymbol{x_i}$'s, and \emph{there exists} a probability distribution
-    for $\boldsymbol{\theta}$, with density $\boldsymbol{p(\theta)}$, such that
+    of some function of the $\boldsymbol{x_i}$'s, \pause and \emph{there exists} a probability distribution
+    for $\boldsymbol{\theta}$, with density $\boldsymbol{p(\theta)}$, such that \pause
 
     \[p(x_1, \ldots, x_n) = \int_{\Theta} \prod_{i = 1}^{n} p(x_i | \theta) \, p(\theta) \, d\theta.\]
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{Le théorème de De Finetti}
+    Ça ressemble pas mal à ce qu'on avais plus tôt, n'est-ce pas? (Retournons voir en arrière...)
+
+    \pause
+
+    \vfill
+
+    \begin{itemize}
+      \item Donc, sous l'hypothèse d'échangeabilité (conditionnelle ou inconditionnelle), ce théorème justifie
+            qu'on utilise un modèle paramétrique et des probabilités \emph{a priori}
+      \pause
+      \item Bien entendu le problème de \emph{bien spécifier} le modèle ne disparait pas par magie
+      \pause
+      \item Mais, c'est un début
+    \end{itemize}
+\end{frame}
 
 
 
+
+%%%%
+%% Applications
+%%%%
 
 \section{Applications}
 
 %% the bulk of content
 %% have the sex ratio example from Aki Vehtari, etc.
 
+
+%%%%
+%% Conclusion
+%%%%
 
 \section{Conclusion}
 
