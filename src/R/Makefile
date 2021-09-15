@@ -1,6 +1,5 @@
-## Not yet ready for use...
-#all : 
-#	+$(MAKE) -C <dir>
-#clean : 
-#	+$(MAKE) clean -C <dir>
+all : 
+	+$(MAKE) -C graphs
+clean : 
+	+$(MAKE) clean -C graphs
 
