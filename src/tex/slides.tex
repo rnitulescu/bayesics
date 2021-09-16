@@ -394,7 +394,8 @@
             inconnue et écart-type, $\boldsymbol{\sigma}$, connue
       \pause
       \item Disons que $\boldsymbol{n} = 5$, $\boldsymbol{\vec{y}} = (149, 127, 141, 130, 160)$, en livres,
-            et $\boldsymbol{\sigma} = 10$
+            que $\boldsymbol{\sigma} = 10$, et que notre \emph{a priori} pour $\boldsymbol{\mu}$
+            est $\boldsymbol{\mu} \sim \textrm{N}(136, 12)$
       \pause
       \item Finalement, on émets aussi l'hypothèse que les mesures de poinds sont indépendents
             conditionnellement sur le paramétre, $\boldsymbol{\mu}$
@@ -417,16 +418,48 @@
     D'après le théorème de Bayes
 
     \[p(\mu | \vec{y}) = \frac{p(\vec{y} | \mu) \, p(\mu)}{p(\vec{y})} 
-      = \frac{p(\vec{y} | \mu) \, p(\mu)}{\int_{-\infty}^{+\infty} p(\vec{y} | \mu) \, p(\mu) \, d\mu}\]
+      = \frac{p(\vec{y} | \mu) \, p(\mu)}{\int_{-\infty}^{+\infty} p(\vec{y} | \mu) \, p(\mu) \, d\mu} \, ,\]
+
+    \pause
+
+    et puisque les mesures de poinds sont indépendents conditionnellement sur $\boldsymbol{\mu}$,
+
+    \[p(\vec{y} | \mu) = \prod_{i=1}^{n} p(y_i | \mu) \, .\]
 \end{frame}
 
 
 \begin{frame}[fragile]
     \frametitle{Exemple: mesurer son poids}
     \textbf{Code R}
-    \verbatiminput{../R/examples/weight.R}
+    \fontsize{9}{11}\selectfont
+    \verbatiminput{../R/examples/weight_pt1.R}
 \end{frame}
 
+
+\begin{frame}[fragile]
+    \frametitle{Exemple: mesurer son poids}
+    \textbf{Code R}
+    \fontsize{9}{11}\selectfont
+    \verbatiminput{../R/examples/weight_pt2.R}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Exemple: mesurer son poids}
+    \textbf{Code R}
+    \fontsize{9}{11}\selectfont
+    \verbatiminput{../R/examples/weight_pt3.R}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Exemple: mesurer son poids}
+    \textbf{Résultats:}
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.60]{images/weight.eps}
+    \end{figure}
+\end{frame}
 
 
 

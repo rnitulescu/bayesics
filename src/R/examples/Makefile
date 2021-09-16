@@ -1,0 +1,5 @@
+all:
+	./weight.R
+clean:
+	
+
