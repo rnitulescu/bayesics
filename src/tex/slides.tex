@@ -17,6 +17,7 @@
 \usepackage{verbatim}
 \usepackage[utf8]{inputenc} %% For french
 \usepackage{tikz} %% For drawing (eg, Venn diagrams)
+\usefonttheme{serif}
 
 \hypersetup{
 	colorlinks=true,
@@ -188,7 +189,7 @@
 
 \begin{frame}
     \frametitle{Allocation de crédibilité}
-    On reviendra à cet exemple plus tard (vous allez la résoudre comme exercice).
+    On reviendra à cet exemple plus tard (vous allez la résoudre comme exercise).
 
     \pause
 
@@ -273,15 +274,35 @@
 
 \section{Théorie}
 
-%% Théorie de la probabilité (révision)
+%% Théorie de la probabilité discrètes (révision)
 
-\subsection{Théorie de la probabilité (révision)}
+\subsection{Probabilité discrètes (révision)}
 
-\subsubsection{Probabilité discrètes}
+\begin{frame}
+    \frametitle{Espace d'échantillonnage, $S$}
+    \begin{itemize}
+      \item L'espace qui contient toutes les issues possible d'une expérience
+      \pause
+      \item Toutes ces possibilités sont mutuellement exclusifs et exhaustifs
+      \pause
+      \item Chaque \textbf{issue} a une \textbf{masse} de probabilité
+      \pause
+      \item Donc, $p(S) = 1$ (la masse totale de toutes les possibilités est de 1)
+    \end{itemize}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Propriétés de la probabilité (négation)}
-    \[p(A^c) = 1 - p(A), \,\,\, \textrm{puisque} \,\,\, A \cup A^c = S\]
+    \begin{itemize}
+      \item $A, A^c \subset S$
+      \item Si $A \cup A^c = S \, \, $ et $ \, \, p(S) = 1$, alors $p(A \cup A^c) = 1$
+      \pause
+      \item Et puisque $A$ et $A^c$ sont mutuellement exclusifs
+      \pause
+      \item $p(A \cup A^c) = p(A) + p(A^c) = 1$, donc $p(A^c) = 1 - p(A)$
+    \end{itemize}
+    \pause
     \begin{figure}
       \centering
       \scalebox{1}{\input{content/aneg.tex}}
@@ -291,22 +312,36 @@
 
 
 \begin{frame}
-    \frametitle{Propriétés de la probabilité (Union)\footnote{
-        Si $A$ et $B$ sont mutuellement exclusifs, $p(A \cap B) = 0$
-    }}
-    \[p(A \cup B) = p(A) + p(B) - p(A \cap B)\]
-    \begin{figure}
-      \centering
-      \scalebox{1}{\input{content/aub.tex}}
-      \caption{Diagramme de Venn représentant $p(A \cup B)$}
-    \end{figure}    
+    \frametitle{Propriétés de la probabilité (additivité)}
+    On peut généraliser:
+
+    \pause
+
+    \vfill
+
+    Si 
+    \[A_1 \cup A_2 \cup \ldots \cup A_n = S,\]
+    \[\sum_{i=1}^{n} p(A_i) = 1.\]
 \end{frame}
 
 
-\begin{frame}
-    \frametitle{Probabilité d'intersection et probabilité conditionnelle}
-    \[p(A \cap B) = p(A | B) \, p(B) \,\,\, \textrm{Donc,} \,\,\, p(A | B) = \frac{p(A \cap B)}{p(B)}\]
+%\begin{frame}
+%    \frametitle{Propriétés de la probabilité (Union)\footnote{
+%        Si $A$ et $B$ sont mutuellement exclusifs, $p(A \cap B) = 0$
+%    }}
+%    \[p(A \cup B) = p(A) + p(B) - p(A \cap B)\]
+%    \pause
+%    \begin{figure}
+%      \centering
+%      \scalebox{1}{\input{content/aub.tex}}
+%      \caption{Diagramme de Venn représentant $p(A \cup B)$}
+%    \end{figure}    
+%\end{frame}
 
+
+\begin{frame}
+    \frametitle{Probabilité d'intersection}
+    Si $A$ et $B$ sont mutuellement exclusifs, $p(A \cap B) = 0$    
     \begin{figure}
       \centering
       \input{content/anb.tex}
@@ -316,11 +351,23 @@
 
 
 \begin{frame}
-    \frametitle{Loi de probabilité totale}
+    \frametitle{Probabilité conditionnelle}
+    On définie la probabilité conditionnelle ainsi:
+    \[p(A | B) = \frac{p(A \cap B)}{p(B)}.\]
+    \pause
+    \[\textrm{Donc,} \, \, p(A \cap B) = p(A | B) \, p(B).\]
+    \pause
+    \[\textrm{Si A et B sont indépendents,} \, \, p(A | B) = p(A).\]
+    \pause
+    \[\textrm{Donc,} \, \, p(A \cap B) = p(A) \, p(B).\]
+\end{frame}
 
+
+\begin{frame}
+    \frametitle{Loi de probabilité totale}
     \[p(E) = p(E \cap H) + p(E \cap H^c)\]
     \[ = p(E | H) \, p(H) + p(E | H^c) \, p(H^c)\]
-
+    \pause
     \begin{figure}
       \centering
       \input{content/totprob.tex}
@@ -328,8 +375,87 @@
     \end{figure}
 \end{frame}
 
-\subsubsection{Probabilité continues}
-%%TODO
+
+\begin{frame}
+    \frametitle{Loi de probabilité totale}
+    On peut généraliser:
+
+    \pause
+
+    \vfill
+
+    Si 
+    \[p(H_1) + p(H_2) + \ldots + p(H_n) = 1,\]
+    \pause
+    \[p(E) = \sum_{i=1}^{n} p(E \cap H_i)\]
+    \pause
+    \[= \sum_{i=1}^{n} p(E | H_i) \, p(H_i).\]
+\end{frame}
+
+
+%% Théorie de la probabilité continues (révision)
+
+\subsection{Probabilité continues (révision)}
+
+\begin{frame}
+    \frametitle{Masse et densité de probabilité}
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.60]{images/mass_v_density.eps}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Espace d'échantillonnage}
+    \begin{itemize}
+      \item Pour une variable continue, l'espace d'échantillonnage peut être l'ensemble des nombres réels
+      \pause
+      \item Pour chaque issue dans cet espace, on ne peut que mesurer sa \textbf{densité} de probabilité
+      \pause
+      \item Pour mesurer une masse, il faut prendre l'intégrale de la fonction
+            de densité sur une intervalle de son espace d'échantillonnage
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Propriétés de la probabilité (additivité)}
+    Si $p_X(x)$ est la fonction de densité de probabilité de $x$,
+    \[\int_X p_X(x) \, dx = 1.\]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Probabilité jointe}
+    Si $x$ et $y$ sont indépendents,
+    \[p_{X,Y}(x,y) = p_X(x) \, p_Y(y).\]
+    \pause
+    De façon similaire, si $x$ et $y$ sont indépendents
+    conditionnellement sur une autre variable, $z$,
+    \[p_{X,Y|Z}(x,y|z) = p_{X|Z}(x|z) \, p_{Y|Z}(y|z).\]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Relations entre probabilité jointe, marginale, et conditionnelle}
+    \[\textrm{Marginale:} \, \, \, p_X(x) = \int_Y p_{X,Y}(x,y) \, dy\]
+    \pause
+    \[\textrm{Conditionnelle:} \, \, \, p_{X|Y}(x|y) = \frac{p_{X,Y}(x,y)}{p_Y(y)}\]
+    \pause
+    \[\textrm{Jointe:} \, \, \, p_{X,Y}(x,y) = p_{X|Y}(x|y) \, p_Y(y)\]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Loi de probabilité totale (version continue)}
+    Si
+    \[\int_Y p_Y(y) \, dy = 1,\]
+    \pause
+    \[p_X(x) = \int_{Y} p_{X,Y}(x, y) \, dy\]
+    \pause
+    \[= \int_{Y} p_{X|Y}(x | y) \, p_Y(y) \, dy.\]
+\end{frame}
 
 
 %% Théorie bayésienne
@@ -576,21 +702,21 @@
 \end{frame}
 
 
-\begin{frame}
-    \frametitle{Extension vers les modèles linéaires}
-    Prennons le modèle linéaire suivant:
-
-    \[y_i \sim \textrm{N}(\mu_i, \sigma), \, \, \, i = 1, \ldots, n\]
-    \[\mu_i = \beta_0 + \beta_1 x_i\]
-
-    \pause
-
-    Nous pouvons appliquer le théorème de Bayes à ce problème aussi:
-
-    \pause
-
-    
-\end{frame}
+%\begin{frame}
+%    \frametitle{Extension vers les modèles linéaires}
+%    Prennons le modèle linéaire suivant:
+%
+%    \[y_i \sim \textrm{N}(\mu_i, \sigma), \, \, \, i = 1, \ldots, n\]
+%    \[\mu_i = \beta_0 + \beta_1 x_i\]
+%
+%    \pause
+%
+%    Nous pouvons appliquer le théorème de Bayes à ce problème aussi:
+%
+%    \pause
+%
+%    ...
+%\end{frame}
 
 
 %%%%
@@ -600,8 +726,18 @@
 \section{Conclusion}
 
 \begin{frame}
-    \frametitle{...}
-    ...
+    \frametitle{Conclusion}
+    \begin{itemize}
+      \item L'inférence bayésienne c'est la \textbf{réallocation de crédibilité}
+            parmi toutes les possibilités hypothétiques (mutuellement exclusifs et exhaustifs)
+      \pause
+      \item On commence avec un \emph{a priori} est on calcule les probabilités
+            \emph{a posteriori} après avoir fait des observations
+      \pause
+      \item La régle qui nous permets de faire cela de façon cohérente, c'est le théorème de Bayes
+      \pause
+      \item La mise en application de ceci requiert une connaissance approfondie de la théories des probabilités
+    \end{itemize}
 \end{frame}
 
 
