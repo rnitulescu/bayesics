@@ -427,9 +427,39 @@
 
     \pause
 
-    et puisque les mesures de poinds sont indépendents conditionnellement sur $\boldsymbol{\mu}$,
+    et puisque les mesures de poids sont indépendents conditionnellement sur $\boldsymbol{\mu}$,
 
     \[p(\vec{y} | \mu) = \prod_{i=1}^{n} p(y_i | \mu) \, .\]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Exemple: mesurer son poids}
+    Donc, les composantes du modèle sont:
+
+    \pause
+
+    \vfill
+
+    \textbf{La vraisemblance (``likelihood'')}
+
+    \[\prod_{i=1}^{n} \textrm{N}(y_i | \mu, 10)\]
+
+    \pause
+
+    \vfill
+
+    \textbf{Le \emph{a priori} (``prior'')}
+
+    \[\textrm{N}(\mu | 136, 12)\]
+
+    \pause
+
+    \vfill
+
+    \textbf{La vraisemblance marginale (``marginal likelihood'')}
+
+    \[\int_{-\infty}^{+\infty} \prod_{i=1}^{n} \textrm{N}(y_i | \mu, 10) \, \textrm{N}(\mu | 136, 12) \, d\mu\]
 \end{frame}
 
 
@@ -467,6 +497,100 @@
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{Exemple: mesurer son poids}
+    Et si on utilisait une méthode fréquentiste?
+
+    \pause
+
+    \vfill
+
+    \[\mu = \bar{y} = \frac{\sum_{i=1}^{n} y_i}{n} = 141\]
+
+    \pause
+
+    \vfill
+
+    \[\sigma_{\bar{y}} = \sqrt{\frac{\left(\frac{\sum_{i=1}^{n} (y_i - \bar{y})^2}{n-1}\right)}{n}} = 6.1\]
+
+    \pause
+
+    \vfill
+
+    Donc, notre \emph{a priori} nous à aidé à diminuer l'écart type de notre estimé de $\boldsymbol{\mu}$
+    de 6.1 à 4.25.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Exemple: retour aux ballons}
+    Et maintenant c'est à votre tour de résoudre un problème plus simple que ce dernier exemple.
+
+    \pause
+
+    \vfill
+
+    Une usine produit des ballons ronds de différentes tailles (diamètre = 1 dm, 2 dm, 3 dm, ou 4 dm) \pause
+    \begin{itemize}
+      \item Mais il y a de la variation dans les tailles exactes, en pratique
+      \pause
+      \item Par example, la taille de chaque ballon suit approximativement une loi normale avec
+            taille \textbf{moyenne}, $\boldsymbol{\mu}$, de 1, 2, 3, ou 4 dm et \textbf{écart type} de 1.16 dm
+      \pause
+      \item Supposons que nous avons commandé trois ballons d'une même taille (diamètre = 2 dm),
+            mais que nous avons reçu trois ballons avec les tailles suivantes: 1.77, 2.23, et 2.70 dm.
+      \pause
+      \item Quelle est la probabilité que les trois ballons sont du type avec diamètre = 2 dm?
+            Même question pour les autres tailles (1, 3, 4 dm). Finallement, quelle est la
+            taille la plus crédible?
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Exemple: retour aux ballons}
+    Voici quelques indices:
+
+    \vfill
+
+    \begin{itemize}
+      \item Commencez avec une derivation des formules à la main avant de programmer dans R
+      \item $\vec{y} = (1.77, 2.23, 2.70)$
+      \item $\boldsymbol{\mu}$ est une variable aléatoire discrète ($\boldsymbol{\mu} \in \{1, 2, 3, 4\}$)
+      \item On veut calculer la probabilité $p(\mu = 2 | \vec{y})$ (diamètre = 2)
+      \item \emph{A priori}, on donne une probabilité égale (de 0.25) aux quatres possibilités
+      \pause
+      \item $y_i \sim \textrm{N}(\mu, 1.16)$
+      \pause
+      \item La vraisemblance est: $\prod_{i=1}^{3} \textrm{N}(y_i | \mu, 1.16)$
+      \pause
+      \item On calcule la vraisemblance d'une loi normale avec la fonction ``dnorm()'' dans R
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Exemple: retour aux ballons}
+    On va finir la présentation. Vous pouvez continuer à travailler sur ce problème plus tard.
+    Je vais envoyer la solution lundi matin.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Extension vers les modèles linéaires}
+    Prennons le modèle linéaire suivant:
+
+    \[y_i \sim \textrm{N}(\mu_i, \sigma), \, \, \, i = 1, \ldots, n\]
+    \[\mu_i = \beta_0 + \beta_1 x_i\]
+
+    \pause
+
+    Nous pouvons appliquer le théorème de Bayes à ce problème aussi:
+
+    \pause
+
+    
+\end{frame}
 
 
 %%%%
