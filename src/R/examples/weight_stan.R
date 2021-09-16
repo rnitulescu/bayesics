@@ -16,4 +16,5 @@ fit <- sampling(object=model, data=input, seed=myseed, pars="mu",
                           chains=5, iter=4000, warmup=1500, thin=1)
 print(fit)
 #model.mcmc <- as.data.frame(extract(fit, pars="mu"))
+#hist(model.mcmc[["mu"]], breaks=100, probability=T, add=T)
 
