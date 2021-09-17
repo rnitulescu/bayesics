@@ -126,7 +126,7 @@
       \item \textbf{Aléatoire}
         \begin{itemize}
           \item Fréquence (la limite d'une fréquence relative dans une séquence infinie)
-          \item Propensité (une propriété intrinsèque d'objets ou de situations)
+          \item Propension (une propriété intrinsèque d'objets ou de situations)
         \end{itemize}
 
       \pause
@@ -147,14 +147,14 @@
       \item C'est la \textbf{réallocation de crédibilité} parmi toutes les possibilités hypothétiques
             (mutuellement exclusifs et exhaustifs)
       \pause
-      \item Les possibilités sont les valeurs potentielles de \textbf{paramétres} dans un modèle mathématique
+      \item Les possibilités sont les valeurs potentielles de \textbf{paramètres} dans un modèle mathématique
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Allocation de crédibilité}
-    \textbf{Example abstrait:}
+    \textbf{Exemple abstrait:}
     
     \begin{figure}
       \centering
@@ -166,7 +166,7 @@
 
 \begin{frame}
     \frametitle{Allocation de crédibilité}
-    \textbf{Example concret:\footnote{
+    \textbf{Exemple concret:\footnote{
       Exemple pris de Kruschke, J. K.(2015). \emph{Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan}.
             Academic Press, pp 20-21.
     }}
@@ -174,14 +174,14 @@
     \begin{itemize}
       \item Mais il y a de la variation dans les tailles exactes, en pratique
       \pause
-      \item Par example, la taille de chaque ballon suit approximativement une loi normale avec
+      \item Par exemple, la taille de chaque ballon suit approximativement une loi normale avec
             taille \textbf{moyenne} de 1, 2, 3, ou 4 dm et \textbf{écart type} de 1.16 dm
       \pause
       \item Supposons que nous avons commandé trois ballons d'une même taille (diamètre = 2 dm),
             mais que nous avons reçu trois ballons avec les tailles suivantes: 1.77, 2.23, et 2.70 dm.
       \pause
       \item Quelle est la probabilité que les trois ballons sont du type avec diamètre = 2 dm?
-            Même question pour les autres tailles (1, 3, 4 dm). Finallement, quelle est la
+            Même question pour les autres tailles (1, 3, 4 dm). Finalement, quelle est la
             taille la plus crédible?
     \end{itemize}
 \end{frame}
@@ -189,7 +189,7 @@
 
 \begin{frame}
     \frametitle{Allocation de crédibilité}
-    On reviendra à cet exemple plus tard (vous allez la résoudre comme exercise).
+    On reviendra à cet exemple plus tard (vous allez la résoudre comme exercice).
 
     \pause
 
@@ -428,10 +428,10 @@
 
 \begin{frame}
     \frametitle{Probabilité jointe}
-    Si $x$ et $y$ sont indépendents,
+    Si $x$ et $y$ sont indépendants,
     \[p_{X,Y}(x,y) = p_X(x) \, p_Y(y).\]
     \pause
-    De façon similaire, si $x$ et $y$ sont indépendents
+    De façon similaire, si $x$ et $y$ sont indépendants
     conditionnellement sur une autre variable, $z$,
     \[p_{X,Y|Z}(x,y|z) = p_{X|Z}(x|z) \, p_{Y|Z}(y|z).\]
 \end{frame}
@@ -528,8 +528,8 @@
             que $\boldsymbol{\sigma} = 10$, et que notre \emph{a priori} pour $\boldsymbol{\mu}$
             est $\boldsymbol{\mu} \sim \textrm{N}(136, 12)$
       \pause
-      \item Finalement, on émets aussi l'hypothèse que les mesures de poinds sont indépendents
-            conditionnellement sur le paramétre, $\boldsymbol{\mu}$
+      \item Finalement, on émets aussi l'hypothèse que les mesures de poids sont indépendants
+            conditionnellement sur le paramètre, $\boldsymbol{\mu}$
     \end{itemize}
 \end{frame}
 
@@ -553,7 +553,7 @@
 
     \pause
 
-    et puisque les mesures de poids sont indépendents conditionnellement sur $\boldsymbol{\mu}$,
+    et puisque les mesures de poids sont indépendants conditionnellement sur $\boldsymbol{\mu}$,
 
     \[p(\vec{y} | \mu) = \prod_{i=1}^{n} p(y_i | \mu) \, .\]
 \end{frame}
@@ -660,14 +660,14 @@
     \begin{itemize}
       \item Mais il y a de la variation dans les tailles exactes, en pratique
       \pause
-      \item Par example, la taille de chaque ballon suit approximativement une loi normale avec
+      \item Par exemple, la taille de chaque ballon suit approximativement une loi normale avec
             taille \textbf{moyenne}, $\boldsymbol{\mu}$, de 1, 2, 3, ou 4 dm et \textbf{écart type} de 1.16 dm
       \pause
       \item Supposons que nous avons commandé trois ballons d'une même taille (diamètre = 2 dm),
             mais que nous avons reçu trois ballons avec les tailles suivantes: 1.77, 2.23, et 2.70 dm.
       \pause
       \item Quelle est la probabilité que les trois ballons sont du type avec diamètre = 2 dm?
-            Même question pour les autres tailles (1, 3, 4 dm). Finallement, quelle est la
+            Même question pour les autres tailles (1, 3, 4 dm). Finalement, quelle est la
             taille la plus crédible?
     \end{itemize}
 \end{frame}
@@ -680,11 +680,11 @@
     \vfill
 
     \begin{itemize}
-      \item Commencez avec une derivation des formules à la main avant de programmer dans R
+      \item Commencez avec une dérivation des formules à la main avant de programmer dans R
       \item $\vec{y} = (1.77, 2.23, 2.70)$
       \item $\boldsymbol{\mu}$ est une variable aléatoire discrète ($\boldsymbol{\mu} \in \{1, 2, 3, 4\}$)
       \item On veut calculer la probabilité $p(\mu = 2 | \vec{y})$ (diamètre = 2)
-      \item \emph{A priori}, on donne une probabilité égale (de 0.25) aux quatres possibilités
+      \item \emph{A priori}, on donne une probabilité égale (de 0.25) aux quatre possibilités
       \pause
       \item $y_i \sim \textrm{N}(\mu, 1.16)$
       \pause
@@ -734,7 +734,7 @@
       \item On commence avec un \emph{a priori} est on calcule les probabilités
             \emph{a posteriori} après avoir fait des observations
       \pause
-      \item La régle qui nous permets de faire cela de façon cohérente, c'est le théorème de Bayes
+      \item La règle qui nous permets de faire cela de façon cohérente, c'est le théorème de Bayes
       \pause
       \item La mise en application de ceci requiert une connaissance approfondie de la théories des probabilités
     \end{itemize}
