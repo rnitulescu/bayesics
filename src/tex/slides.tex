@@ -30,7 +30,7 @@
 \usetheme{Madrid}
 
 %% Basic info
-\title{Introduction à la pensé et aux méthodes bayésiennes}
+\title{Introduction à la pensée et aux méthodes bayésiennes}
 %\subtitle{}
 \author{Roy Nitulescu\inst{1}}
 
@@ -92,7 +92,10 @@
     
 %    \vfill
     
-    Le code source pour cette présentation ce trouve içi:\\
+    Le code source pour cette présentation ce trouve ici:
+
+    \vfill
+
     \url{https://github.com/rnitulescu/bayesics}
 \end{frame}
 
@@ -112,7 +115,7 @@
 \begin{frame}
     \frametitle{La dualité du concept de probabilité}
 
-    De par son origine, le concept à une \textbf{dualité}\footnote{
+    De par son origine, le concept a une \textbf{dualité}\footnote{
     Hacking, Ian (1975). \emph{The emergence of probability:
     A philosophical study of early ideas about probability,
     induction and statistical inference}. Cambridge University Press.
@@ -142,10 +145,10 @@
 
 \begin{frame}
     \frametitle{Allocation de crédibilité}
-    \textbf{L'inférence bayésienne} peut-être résumé ainsi: \pause
+    \textbf{L'inférence bayésienne} peut être résumée ainsi: \pause
     \begin{itemize}
       \item C'est la \textbf{réallocation de crédibilité} parmi toutes les possibilités hypothétiques
-            (mutuellement exclusifs et exhaustifs)
+            (mutuellement exclusives et exhaustives)
       \pause
       \item Les possibilités sont les valeurs potentielles de \textbf{paramètres} dans un modèle mathématique
     \end{itemize}
@@ -180,7 +183,7 @@
       \item Supposons que nous avons commandé trois ballons d'une même taille (diamètre = 2 dm),
             mais que nous avons reçu trois ballons avec les tailles suivantes: 1.77, 2.23, et 2.70 dm.
       \pause
-      \item Quelle est la probabilité que les trois ballons sont du type avec diamètre = 2 dm?
+      \item Quelle est la probabilité que les trois ballons soient du type avec diamètre = 2 dm?
             Même question pour les autres tailles (1, 3, 4 dm). Finalement, quelle est la
             taille la plus crédible?
     \end{itemize}
@@ -189,19 +192,19 @@
 
 \begin{frame}
     \frametitle{Allocation de crédibilité}
-    On reviendra à cet exemple plus tard (vous allez la résoudre comme exercice).
+    On reviendra à cet exemple plus tard (vous devrez le résoudre comme exercice).
 
     \pause
 
     \vfill
 
-    Pour répondre à cette question, nous avons besoin d'un peut de théorie.
+    Pour répondre à cette question, nous avons besoin d'un peu de théorie.
 
     \pause
 
     \vfill
 
-    Mais avant: une peut d'intuition.
+    Mais avant: une peu d'intuition.
 \end{frame}
 
 
@@ -218,8 +221,8 @@
         Basic Books, pp 139-142.
     }}
     Supposons que vous avez reçu un résultat positif pour un test diagnostic d'une maladie rare.
-    Quelle est la probabilité que vous avez cette maladie ($\boldsymbol{H}$),
-    conditionnellement sur le résultat du test ($\boldsymbol{E}$)?
+    Quelle est la probabilité que vous ayiez cette maladie ($\boldsymbol{H}$),
+    sachant que le résultat du test est positif ($\boldsymbol{E}$)?
 
     \pause
 
@@ -274,16 +277,16 @@
 
 \section{Théorie}
 
-%% Théorie de la probabilité discrètes (révision)
+%% Théorie de la probabilité discrète (révision)
 
-\subsection{Probabilité discrètes (révision)}
+\subsection{Probabilités discrètes (révision)}
 
 \begin{frame}
     \frametitle{Espace d'échantillonnage, $S$}
     \begin{itemize}
       \item L'espace qui contient toutes les issues possible d'une expérience
       \pause
-      \item Toutes ces possibilités sont mutuellement exclusifs et exhaustifs
+      \item Toutes ces possibilités sont mutuellement exclusives et exhaustives
       \pause
       \item Chaque \textbf{issue} a une \textbf{masse} de probabilité
       \pause
@@ -393,9 +396,9 @@
 \end{frame}
 
 
-%% Théorie de la probabilité continues (révision)
+%% Théorie de la probabilité continue (révision)
 
-\subsection{Probabilité continues (révision)}
+\subsection{Probabilités continues (révision)}
 
 \begin{frame}
     \frametitle{Masse et densité de probabilité}
@@ -528,7 +531,7 @@
             que $\boldsymbol{\sigma} = 10$, et que notre \emph{a priori} pour $\boldsymbol{\mu}$
             est $\boldsymbol{\mu} \sim \textrm{N}(136, 12)$
       \pause
-      \item Finalement, on émets aussi l'hypothèse que les mesures de poids sont indépendants
+      \item Finalement, on émet aussi l'hypothèse que les mesures de poids sont indépendantes
             conditionnellement sur le paramètre, $\boldsymbol{\mu}$
     \end{itemize}
 \end{frame}
@@ -643,7 +646,7 @@
 
     \vfill
 
-    Donc, notre \emph{a priori} nous à aidé à diminuer l'écart type de notre estimé de $\boldsymbol{\mu}$
+    Donc, notre \emph{a priori} nous a aidé à diminuer l'écart type de notre estimé de $\boldsymbol{\mu}$
     de 6.1 à 4.25.
 \end{frame}
 
@@ -666,7 +669,7 @@
       \item Supposons que nous avons commandé trois ballons d'une même taille (diamètre = 2 dm),
             mais que nous avons reçu trois ballons avec les tailles suivantes: 1.77, 2.23, et 2.70 dm.
       \pause
-      \item Quelle est la probabilité que les trois ballons sont du type avec diamètre = 2 dm?
+      \item Quelle est la probabilité que les trois ballons soient du type avec diamètre = 2 dm?
             Même question pour les autres tailles (1, 3, 4 dm). Finalement, quelle est la
             taille la plus crédible?
     \end{itemize}
@@ -731,12 +734,12 @@
       \item L'inférence bayésienne c'est la \textbf{réallocation de crédibilité}
             parmi toutes les possibilités hypothétiques (mutuellement exclusifs et exhaustifs)
       \pause
-      \item On commence avec un \emph{a priori} est on calcule les probabilités
+      \item On commence avec un \emph{a priori} et on calcule les probabilités
             \emph{a posteriori} après avoir fait des observations
       \pause
-      \item La règle qui nous permets de faire cela de façon cohérente, c'est le théorème de Bayes
+      \item La règle qui nous permet de faire cela de façon cohérente, c'est le théorème de Bayes
       \pause
-      \item La mise en application de ceci requiert une connaissance approfondie de la théories des probabilités
+      \item La mise en application de ceci requiert une connaissance approfondie de la théorie des probabilités
     \end{itemize}
 \end{frame}
 

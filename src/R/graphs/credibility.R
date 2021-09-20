@@ -9,11 +9,11 @@ postscript("../../tex/images/credibility.eps", family="serif",
 par(mfrow=c(1,2), cex.lab=1.5, cex.main=1.5)
 barplot(prior, ylim=c(0,1),
         main="a priori: avant observations",
-        xlab="Hypothéses", ylab="Crédibilité")
+        xlab="Hypothèses", ylab="Crédibilité")
 text(x=1:4, y=prior, labels=prior, pos=3)
 barplot(posterior, ylim=c(0,1),
         main="a posteriori: après observations",
-        xlab="Hypothéses", ylab="Crédibilité")
+        xlab="Hypothèses", ylab="Crédibilité")
 text(x=1:4, y=posterior, labels=posterior, pos=3)
 dev.off()
 
