@@ -41,7 +41,7 @@
     CR-CHUM
 }
 
-\date[UdeM, Sept. 22, 2021]{Université de Montréal, Sept. 22, 2021}
+\date[UdeM, Sept. 21, 2022]{Université de Montréal, Sept. 21, 2022}
 
 \AtBeginSection[]
 {
@@ -78,19 +78,6 @@
 
 \begin{frame}
     \frametitle{Préambule}
-%    \begin{itemize}
-%      \item This 3-hour lecture will be broken down into 3 modules
-%      \item Each module will last 50 minutes
-%      \begin{itemize}
-%        \item 30 minutes of lecture time
-%        \item 10 minutes for exercises
-%        \item 10 minutes for discussing the exercises
-%      \end{itemize}
-%      \item There will be two 15-minute breaks between the modules
-%      \item I expect that all students have already installed R on their computer and tested that it works
-%    \end{itemize}
-    
-%    \vfill
     
     Le code source pour cette présentation ce trouve ici:
 
@@ -277,6 +264,29 @@
 
 \section{Théorie}
 
+%% Théorie des ensembles (révision)
+
+\subsection{Théorie des ensembles (révision)}
+
+\begin{frame}
+  \frametitle{Théorie des ensembles (version naïf)}
+  \begin{itemize}
+    \item Un ensemble est une collection d'éléments (ex: $X = \{1,2,3,4,5,6\}$)
+    \pause
+    \item Un sous-ensemble, $A \subset X$, est aussi un ensemble (ex: $A = \{1,3,5\}$)
+    \pause
+    \item Opérations de base:
+    \begin{itemize}
+      \item Union: $A \cup B$ contient chaque élément ce trouvant dans $A$ \emph{ou} $B$
+      \pause
+      \item Intersection: $A \cap B$ contient chaque élément ce trouvant dans $A$ \emph{et} $B$
+      \pause
+      \item Complément: $A^c$ contient chaque élément qui ne ce trouve \emph{pas} dans $A$ (sous l'hypothèse d'un ensemble universel)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
 %% Théorie de la probabilité discrète (révision)
 
 \subsection{Probabilités discrètes (révision)}
@@ -284,33 +294,45 @@
 \begin{frame}
     \frametitle{Espace d'échantillonnage, $S$}
     \begin{itemize}
-      \item L'espace qui contient toutes les issues possible d'une expérience
+      \item L'espace, $S$, qui contient toutes les issues possible d'une expérience
       \pause
       \item Toutes ces possibilités sont mutuellement exclusives et exhaustives
       \pause
       \item Chaque \textbf{issue} a une \textbf{masse} de probabilité
       \pause
-      \item Donc, $p(S) = 1$ (la masse totale de toutes les possibilités est de 1)
+      \item On définie un \textbf{événement}, $A$, comme étant un sous-ensemble de $S$ (ex: "rouler un nombre impair" = $\{1,3,5\}$)
+      \pause
+      \item On calcule la probabilité d'un événement en comptant le nombre d'éléments dans $A$ et en divisant par le nombre d'éléments dans $S$
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Les axiomes de Kolmogorov}
+    \begin{itemize}
+      \item $\textrm{(K1)} \, \, p(A) \geq 0, \textrm{où} \, \, A \subset S$
+      \pause
+      \item $\textrm{(K2)} \, \, p(S) = 1$
+      \pause
+      \item $\textrm{(K3)} \, \, p(\bigcup_{i=1}^{n} A_i) = \sum_{i=1}^{n} p(A_i)$, (prob. de l'union = somme des prob.)
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Propriétés de la probabilité (négation)}
-    \begin{itemize}
-      \item $A, A^c \subset S$
-      \item Si $A \cup A^c = S \, \, $ et $ \, \, p(S) = 1$, alors $p(A \cup A^c) = 1$
-      \pause
-      \item Et puisque $A$ et $A^c$ sont mutuellement exclusifs
-      \pause
-      \item $p(A \cup A^c) = p(A) + p(A^c) = 1$, donc $p(A^c) = 1 - p(A)$
-    \end{itemize}
+    A partir des axiomes, on peut deriver maintes propriétés et relations. Voici un exemple.\\
+    \pause
+    \[p(S) = p(A \cup A^c) = p(A) + p(A^c) = 1\]
+    \pause
+    Donc,
+    \[p(A^c) = 1 - p(A)\]
     \pause
     \begin{figure}
       \centering
       \scalebox{1}{\input{content/aneg.tex}}
       \caption{Diagramme de Venn représentant la négation (complément)}
-    \end{figure}
+    \end{figure}    
 \end{frame}
 
 
@@ -328,6 +350,7 @@
 \end{frame}
 
 
+%% Skipping, since not needed for this lecture (though a standard basic result)
 %\begin{frame}
 %    \frametitle{Propriétés de la probabilité (Union)\footnote{
 %        Si $A$ et $B$ sont mutuellement exclusifs, $p(A \cap B) = 0$
