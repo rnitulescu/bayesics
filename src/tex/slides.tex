@@ -314,7 +314,7 @@
       \pause
       \item $\textrm{(K2)} \, \, p(S) = 1$
       \pause
-      \item $\textrm{(K3)} \, \, p(\bigcup_{i=1}^{n} A_i) = \sum_{i=1}^{n} p(A_i)$, (prob. de l'union = somme des prob.)
+      \item $\textrm{(K3)} \, \, p(\bigcup_{i=1}^{n} A_i) = \sum_{i=1}^{n} p(A_i)$
     \end{itemize}
 \end{frame}
 
@@ -367,6 +367,9 @@
 
 \begin{frame}
     \frametitle{Probabilité d'intersection}
+    $A = \{2,4,6\}$ et $B = \{3,6\}$, donc $A \cap B = \{6\}$ et $p(A \cap B) = 1/6$.\\
+    \vfill
+    \pause
     Si $A$ et $B$ sont mutuellement exclusifs, $p(A \cap B) = 0$    
     \begin{figure}
       \centering
@@ -377,33 +380,113 @@
 
 
 \begin{frame}
-    \frametitle{Probabilité conditionnelle}
-    On définie la probabilité conditionnelle ainsi:
-    \[p(A | B) = \frac{p(A \cap B)}{p(B)}.\]
+    \frametitle{Probabilité jointe}
+    Pour l'instant on n'a regardé que des probabilités univariés. Mais on peut avoir des probabilités multivariés également.
+    Exemple: un tableau croisé.
     \pause
-    \[\textrm{Donc,} \, \, p(A \cap B) = p(A | B) \, p(B).\]
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        Cheveux & Noirs & Bruns & Roux & Blonds \\
+        \hline\hline
+        Yeux bruns & 11 & 20 & 4 & 1 \\
+        Yeux bleus & 3 & 14 & 3 & 16 \\
+        Yeux verts & 1 & 5 & 2 & 3 \\
+        \hline
+      \end{tabular}
+      \caption{Tableau croisé (distribution bivarié)}
+    \end{table}
     \pause
-    \[\textrm{Si A et B sont indépendents,} \, \, p(A | B) = p(A).\]
-    \pause
-    \[\textrm{Donc,} \, \, p(A \cap B) = p(A) \, p(B).\]
+    A partir de cette table, on peut calculer des probabilités de la forme $\textbf{p(x, y)}$ (dittes \emph{jointes}),
+    où $x$ représente la couleur des yeux et $y$ représente la couleur des cheveux.
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Loi de probabilité totale}
-    \[p(E) = p(E \cap H) + p(E \cap H^c)\]
-    \[ = p(E | H) \, p(H) + p(E | H^c) \, p(H^c)\]
+    \frametitle{Probabilité marginale}
+    A partir du même tableau croisé, on peut également calculer les probabilités \emph{marginaux} en prennants des sommes comme suit:
     \pause
+    \[p(x) = \sum_y p(x,y)\]
+    \pause
+    et
+    \[p(y) = \sum_x p(x,y).\]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Probabilité conditionnelle I}
+    Dans le contexte des axiomes de Kolmogorov, on définie la probabilité conditionnelle ainsi:
+    \[p(A | B) = \frac{p(A \cap B)}{p(B)}.\]
+    \pause
+    \[\textrm{Donc,} \, \, p(A \cap B) = p(A | B) \, p(B).\]
+    %% Below is WRONG. Careful to move it where it applies correctly to bivariate case...
+    %\pause
+    %\[\textrm{Si A et B sont indépendents,} \, \, p(A | B) = p(A).\]
+    %\pause
+    %\[\textrm{Donc,} \, \, p(A \cap B) = p(A) \, p(B).\]
+    \pause
+    \vfill
+    Notez: dans d'autre systèmes axiomatiques de probabilité, par exemple dans le système à De Finetti,
+    la probabilité conditionelle est un concept de base, et donc, la deuxième equation serait un axiome dans
+    ce système là.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Probabilité conditionnelle II}
+    On peut également exprimer les probabilités conditionelles pour le cas bivarié.
+
+    \vfill
+
+    \pause
+
+    Par example, si nous prennons notre exemple de tout-à-l'heure, la probabilité d'avoir
+    les yeux bleus \emph{et} les cheveux bruns ($p(\textrm{`yeux bleus'} \cap \textrm{`cheveux bruns'})$) peut
+    être exprimée comme une probabilité jointe:
+
+    \[p(x=\textrm{`yeux bleus'}, y=\textrm{`cheveux bruns'}).\]
+
+    \pause
+
+    \vfill
+
+    Donc, on peut définir la probabilité conditionelle ainsi:
+    \[p(x | y) = \frac{p(x,y)}{p(y)}.\]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Indépendence de variables aléatoires}
+    On définie la propriété d'indépendence de deux variables aléatoires ainsi.
+    Deux variables aléatoires, $x$ et $y$, sont dittes indépendentes si:
+    \[p(x,y) = p(x) \, p(y).\]
+    \pause
+    \vfill
+    Dans une perspective plus épistémique de la probabilité, on peut aussi définir cette propriété ainsi.
+    Deux variables aléatoires, $x$ et $y$, sont dittes indépendentes si:
+    \[p(x|y) = p(x).\]
+    \pause
+    \vfill
+    Alors, cela impliquerait que $p(x,y) = p(x) \, p(y)$ puisque $p(x|y) = p(x,y) / p(y)$.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Loi de probabilité totale I}
     \begin{figure}
       \centering
       \input{content/totprob.tex}
       \caption{Diagramme de Venn représentant loi de probabilité totale}
     \end{figure}
+    \pause
+    \[p(E) = p(E \cap H) + p(E \cap H^c)\]
+    \[ = p(E | H) \, p(H) + p(E | H^c) \, p(H^c)\]
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Loi de probabilité totale}
+    \frametitle{Loi de probabilité totale II}
     On peut généraliser:
 
     \pause
@@ -449,6 +532,11 @@
     \frametitle{Propriétés de la probabilité (additivité)}
     Si $p_X(x)$ est la fonction de densité de probabilité de $x$,
     \[\int_X p_X(x) \, dx = 1.\]
+    \vfill
+    \pause
+    Ceci suit directement des axiomes (K2) et (K3), si on partitionne l'espace d'échantillonnage
+    en petits intervales et prennons la somme Riemann. Dans la limite que les intervales sont infiniments
+    petits, la somme converge à l'intégrale de Riemann, ce qui done l'identité en haut.
 \end{frame}
 
 
