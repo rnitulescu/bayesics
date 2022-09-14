@@ -314,7 +314,7 @@
       \pause
       \item $\textrm{(K2)} \, \, p(S) = 1$
       \pause
-      \item $\textrm{(K3)} \, \, p(\bigcup_{i=1}^{n} A_i) = \sum_{i=1}^{n} p(A_i)$
+      \item $\textrm{(K3)} \, \, p(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} p(A_i)$, où les ensembles $A_i$ sont mutuellements exclusifs
     \end{itemize}
 \end{frame}
 
@@ -552,6 +552,12 @@
 
 
 \begin{frame}
+    \frametitle{Exemples de distributions jointes continues}
+    %% include image with some comments on indep. vs. correlated distributions.
+\end{frame}
+
+
+\begin{frame}
     \frametitle{Relations entre probabilité jointe, marginale, et conditionnelle}
     \[\textrm{Marginale:} \, \, \, p_X(x) = \int_Y p_{X,Y}(x,y) \, dy\]
     \pause
@@ -620,7 +626,7 @@
 \begin{frame}
     \frametitle{Exemple: mesurer son poids}
     Supposons que vous voulez mesurer votre poids, mais votre balance
-    est très imprécise. Comment inférer son poids à partir de plusieurs mesures?
+    est très imprécise (mais non-biaisé). Comment inférer son poids à partir de plusieurs mesures?
 
     \pause
 
