@@ -14,7 +14,7 @@ mean <- c(0, 0)
 cov <- matrix(c(2, 0, 0, 2), nrow=2)
 f <- function(x1, x2) dmnorm(cbind(x1, x2), mean, cov)
 y <- outer(x1, x2, f)
-contour(x1, x2, y, main="x et y sont indépendents",
+contour(x1, x2, y, main="x et y sont indépendants",
         xlab="x", ylab="y")
 
 ## Positively correlated case
